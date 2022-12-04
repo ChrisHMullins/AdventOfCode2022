@@ -15,11 +15,8 @@ public func part1() {
         
         let secondString = pack.suffix(numberOfItems/2)
         
-        print("\(firstString) \(secondString)")
-        
-        //let common = zip(firstString, secondString).filter{ $0 == $1 }
-        
-        
+        //print("\(firstString) \(secondString)")
+    
         for letter in firstString {
             if secondString.contains(letter) {
                 scoreLetter("\(letter)")
@@ -99,6 +96,7 @@ public func scoreLetter(_ letter:String) {
         }
     }
     
+    // Same code with A to Z
     
     let startChar2 = Unicode.Scalar("A").value
     let endChar2 = Unicode.Scalar("Z").value
@@ -109,7 +107,7 @@ public func scoreLetter(_ letter:String) {
 
         if let char = Unicode.Scalar(alphabet) {
             if char == Unicode.Scalar(letter)  {
-                print(char)
+                //print(char)
                 
                 totalPriority += counter
             }
