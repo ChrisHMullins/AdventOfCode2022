@@ -2,31 +2,34 @@ import Foundation
 
 public func day05SolutionPart1() {
     
-    let stacks = setupStacksTest()
-    
-    let moves = day05InputTest.components(separatedBy: "\n")
+    var stacks = setupStacks()
+    let moves = day05Input.components(separatedBy: "\n")
     
     for move in moves {
-        
+
+        //move 1 from 2 to 1
         let moveSplit = move.components(separatedBy: " ")
         
         let containersToMove = Int(moveSplit[1]) ?? 0
-        let fromStack = Int(moveSplit[3]) ?? 0
-        let toStack = Int(moveSplit[5]) ?? 0
-        
-        print("Move \(containersToMove) from \(fromStack) to \(toStack)")
-        
-        for index in 1...Int(containersToMove) {
-            
-            print("Moving \(stacks[fromStack][stacks[fromStack].count])")
-            
+        let fromStack = (Int(moveSplit[3]) ?? 0) - 1
+        let toStack = (Int(moveSplit[5]) ?? 0) - 1
+
+        //print("Move \(containersToMove) from \(fromStack+1) to \(toStack+1)")
+
+        for _ in 1...Int(containersToMove) {
+            let containerContents = stacks[fromStack].popLast() ?? ""
+
+            stacks[toStack].append(containerContents)
+
+            //print("Moving \(containerContents)")
         }
         
     }
-    
- 
-    
-    
+    var topString = ""
+    for stack in stacks {
+        topString += stack.last ?? " "
+    }
+    print(topString)
 }
 
 public func setupStacks() -> [[String]] {
@@ -90,12 +93,44 @@ public func setupStacksTest() -> [[String]] {
     return stacks
 }
 
-
-day05SolutionPart1()
-
-
 public func day05SolutionPart2() {
-    
+
+    var stacks = setupStacks()
+    let moves = day05Input.components(separatedBy: "\n")
+
+    for move in moves {
+
+        //move 1 from 2 to 1
+        let moveSplit = move.components(separatedBy: " ")
+
+        let containersToMove = Int(moveSplit[1]) ?? 0
+        let fromStack = (Int(moveSplit[3]) ?? 0) - 1
+        let toStack = (Int(moveSplit[5]) ?? 0) - 1
+
+        //print("Move \(containersToMove) from \(fromStack+1) to \(toStack+1)")
+
+        var craneContents = [String]()
+
+        for _ in 1...Int(containersToMove) {
+            craneContents.append(stacks[fromStack].popLast() ?? "")
+
+        }
+
+        //put them down
+        for _ in craneContents {
+            stacks[toStack].append(craneContents.popLast() ?? "")
+        }
+
+
+
+    }
+    var topString = ""
+    for stack in stacks {
+        topString += stack.last ?? " "
+    }
+    print(topString)
+
 }
 
+day05SolutionPart2()
 
