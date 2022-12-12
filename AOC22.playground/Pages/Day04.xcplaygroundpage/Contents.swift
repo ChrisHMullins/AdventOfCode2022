@@ -88,4 +88,5 @@ public func day04SolutionPart2() {
     
     print(numAssignmentPairs)
 }
-day04SolutionPart2()
+
+//day04SolutionPart2()

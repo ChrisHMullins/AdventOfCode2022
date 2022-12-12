@@ -1,5 +1,13 @@
 import Foundation
 
+
+/*
+
+ Incomplete solution. Error possibly in how I mapped the nodes?
+ 
+ 
+ */
+
 let inputData = day07Input.components(separatedBy: "\n")
 
 var totalSize = 0

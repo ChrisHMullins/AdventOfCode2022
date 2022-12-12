@@ -134,5 +134,5 @@ func score2(_ opponent: String,_ player: String) {
     
 }
     
-day2Solution()
+//day2Solution()
 

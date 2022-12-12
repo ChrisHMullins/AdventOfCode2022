@@ -1,5 +1,3 @@
-//: [Previous](@previous)
-
 import Foundation
 
 var totalPriority = 0
@@ -73,7 +71,7 @@ public func part2() {
     print(totalPriority)
 }
 
-part2()
+//part2()
 
 public func scoreLetter(_ letter:String) {
     
@@ -117,7 +115,3 @@ public func scoreLetter(_ letter:String) {
 }
 
 
-
-
-
-//: [Next](@next)

@@ -132,5 +132,5 @@ public func day05SolutionPart2() {
 
 }
 
-day05SolutionPart2()
+//day05SolutionPart2()
 

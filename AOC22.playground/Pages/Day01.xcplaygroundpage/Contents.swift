@@ -38,5 +38,5 @@ public func day1Solution() {
     
 }
 
-day1Solution()
+//day1Solution()
 

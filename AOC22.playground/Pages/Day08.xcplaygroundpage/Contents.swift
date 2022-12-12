@@ -26,8 +26,6 @@ public func day08Solution() {
                 vslice.append(row[treeCount])
             }
 
-
-
             let isVisibleH = isVisible(row: row, index: treeCount)
             let isVisibleV = isVisible(row: vslice, index: rowCount)
 
@@ -132,7 +130,6 @@ public func viewScore(row:[Int], index:Int) -> Int {
 
     //print("row \(row) index \(index)")
 
-
     var leftScore = Int()
     var rightScore = Int()
 
@@ -186,7 +183,6 @@ public func viewScore(row:[Int], index:Int) -> Int {
     rightScore = counter
 
     //print("row: \(row) index: \(index) left score: \(leftScore) right score: \(rightScore)")
-
 
     return leftScore * rightScore
 }
